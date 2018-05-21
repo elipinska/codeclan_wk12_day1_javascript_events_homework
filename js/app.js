@@ -21,19 +21,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleSubmission(event) {
+
   const resultsTable = document.getElementById('resultsTable');
 
   const newTableRow = document.createElement('tr');
-  const newEntry = [this.title.value, this.author.value, this.category.value, this.topic.value];
 
-  console.log(newEntry);
+  const newEntry = {title: this.title.value,
+    authorb: this.author.value,
+    category: this.category.value,
+    topic: this.topic.value
+  };
 
-  newEntry.forEach((field)=> {
-    const newTableData = document.createElement('td');
-    newTableData.textContent = field;
-    newTableRow.appendChild(newTableData);
-  });
 
-  resultsTable.appendChild(newTableRow);
-  event.preventDefault();
+  function isEmpty(formSubmission) {
+   const result = false;
+   for (let property in formSubmission) {
+     if (formSubmission[property].length === 0) {
+       return true
+     }
+   }
+   return result;
+  }
+
+  if (isEmpty(newEntry)) {
+    console.warn("You have an empty field");
+  } else {
+    for (let property in newEntry) {
+      const newTableData = document.createElement('td');
+      newTableData.textContent = newEntry[property];
+      newTableRow.appendChild(newTableData);
+    }
+
+    resultsTable.appendChild(newTableRow);
+    form.reset();
+
+  }
+event.preventDefault();
+
 }
