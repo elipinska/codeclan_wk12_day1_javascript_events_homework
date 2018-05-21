@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const savedItems = document.getElementById('savedItems');
+  const savedItems = document.getElementById('saved-items');
 
-  const resultsTable = document.createElement('table');
-  const tableHeadings = ['Title', 'Author', 'Category', 'Topic'];
-  resultsTable.setAttribute("id", "resultsTable");
-
-  tableHeadings.forEach((heading) => {
-    const newHeading = document.createElement('th');
-    newHeading.textContent = heading;
-    resultsTable.appendChild(newHeading);
-  });
-
-  savedItems.appendChild(resultsTable);
+  // const resultsTable = document.createElement('table');
+  // const tableHeadings = ['Title', 'Author', 'Category', 'Topic'];
+  // resultsTable.setAttribute("id", "resultsTable");
+  //
+  // tableHeadings.forEach((heading) => {
+  //   const newHeading = document.createElement('th');
+  //   newHeading.textContent = heading;
+  //   resultsTable.appendChild(newHeading);
+  // });
+  //
+  // savedItems.appendChild(resultsTable);
 
   const form = document.getElementById('form');
 
@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleSubmission(event) {
 
-  const newTableRow = document.createElement('tr');
+  // const newTableRow = document.createElement('tr');
+  const newDiv = document.createElement('div');
+  newDiv.setAttribute('class', 'single-list-item');
 
   const newEntry = {title: this.title.value,
     author: this.author.value,
@@ -37,12 +39,18 @@ function handleSubmission(event) {
     warning.textContent = "";
     for (let property in newEntry) {
       removeBorder(property);
-      const newTableData = document.createElement('td');
-      newTableData.textContent = newEntry[property];
-      newTableRow.appendChild(newTableData);
+      // const newTableData = document.createElement('td');
+      // newTableData.textContent = newEntry[property];
+      // newTableRow.appendChild(newTableData);
+
+      const newParapgraph = document.createElement('p');
+      newParapgraph.textContent = `${property}: ${newEntry[property]}`;
+      newDiv.appendChild(newParapgraph);
     }
 
-    resultsTable.appendChild(newTableRow);
+    // resultsTable.appendChild(newTableRow);
+    const savedItems = document.getElementById('saved-items');
+    savedItems.appendChild(newDiv);
     form.reset();
 
 

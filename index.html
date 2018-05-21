@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>My Reading List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
     <script src="js/app.js"></script>
   </head>
   <body>
+    <div id="main-content">
     <h1>My Reading List</h1>
     <form id="form">
       <label for="title">Title:</label>
@@ -32,7 +34,7 @@
         <label for="category4">Short story</label>
       </div>
 
-      <div>
+      <div id="topic">
         <p>Select topic:</p>
 
         <select id='topic'>
@@ -47,10 +49,11 @@
       <input type="submit" value="Submit">
 
     </form>
+  </div>
 
     <div id="warning"></div>
 
-    <div id="savedItems"></div>
+    <div id="saved-items"></div>
 
   </body>
 </html>
