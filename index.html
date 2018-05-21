@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Reading List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <h1>My Reading List</h1>
+    <form id="form">
+      <label for="title">Title:</label>
+      <input type="text" name="title">
+
+      <label for="author">Author:</label>
+      <input type="text" name="author">
+
+
+      <div id="category">
+      <p>Select category:</p>
+
+        <input type="radio" id="category1" name="category" value="Book">
+        <label for="category1">Book</label>
+
+        <input type="radio" id="category2" name="category" value="Article">
+        <label for="category2">Article</label>
+
+        <input type="radio" id="category3" name="category" value="Blog post">
+        <label for="category3">Blog post</label>
+
+        <input type="radio" id="category4" name="category" value="Short story">
+        <label for="category4">Short story</label>
+      </div>
+
+      <div>
+        <p>Select topic:</p>
+
+        <select id='topic'>
+          <option value="News">News</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-fiction">Non-fiction</option>
+          <option value="Hobbies">Hobbies</option>
+        </select>
+      </div>
+
+      <input type="submit" value="Submit">
+
+    </form>
+
+    <div id="savedItems"></div>
+
+  </body>
+</html>
