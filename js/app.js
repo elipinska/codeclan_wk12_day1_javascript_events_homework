@@ -66,6 +66,8 @@ function isEmpty(formSubmission) {
    if (formSubmission[property].length === 0) {
      addBorder(property);
      result = true;
+   } else {
+     removeBorder(property);
    }
  }
  return result;
